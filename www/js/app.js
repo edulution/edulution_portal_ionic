@@ -22,7 +22,8 @@ angular.module('portal', ['ionic'])
     }
   });
 })
-.controller('ContentCtrl',function($scope){
+.controller('ContentCtrl',function($scope, $ionicModal){
+  $scope.selectedTest = "";
   $scope.tab = 0;   /* initially set tab to 1*/
   $scope.toggleTab = function (setTab) { /* Set tab to whatever tab user clicks*/
     if ($scope.tab == setTab){
@@ -36,6 +37,47 @@ angular.module('portal', ['ionic'])
   };
   $scope.isSelected = function (checkTab) {/* Check which tab is selected to trigger show of selected tab */
     return $scope.tab === checkTab;
+  };
+
+  /*Modal when test is selected*/
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+  $scope.chooseTest = function (test) {
+    $scope.selectedTest = test;
+    $scope.modal.show();
+    // body...
+  }
+  $scope.checkPassword = function (password) {
+    // body...
+    if (password == "admin") {
+      $scope.modal.hide();
+      $scope.modal.remove();
+      window.open("/tests/"+$scope.selectedTest+".html","_self")
+      $scope.selectedTest = "";
+      
+    }
   };
          
 });
