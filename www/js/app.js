@@ -20,10 +20,15 @@ angular.module('portal', ['ionic'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    ionic.Platform.isFullScreen = true;
   });
 })
-.controller('ContentCtrl',function($scope, $ionicModal){
+
+/*Main controller*/
+.controller('ContentCtrl',function($scope, $state, $ionicModal){
   $scope.selectedTest = "";
+  $scope.coachPassword ="Ctrib3";
+  $scope.wrongPassword = false;
   $scope.tab = 0;   /* initially set tab to 1*/
   $scope.toggleTab = function (setTab) { /* Set tab to whatever tab user clicks*/
     if ($scope.tab == setTab){
@@ -46,12 +51,7 @@ angular.module('portal', ['ionic'])
   }).then(function(modal) {
     $scope.modal = modal;
   });
-  $scope.openModal = function() {
-    $scope.modal.show();
-  };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-  };
+ 
   // Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
@@ -67,18 +67,43 @@ angular.module('portal', ['ionic'])
   $scope.chooseTest = function (test) {
     $scope.selectedTest = test;
     $scope.modal.show();
-    // body...
-  }
+  }  
+})
+
+
+/*Form controller*/
+.controller('formCtrl',function($scope) {
+    $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+    $scope.wrongPassword = false;
+    $scope.password = "";
+  };
+
   $scope.checkPassword = function (password) {
-    // body...
-    if (password == "admin") {
+    if (password == $scope.coachPassword) {
+      $scope.wrongPassword = false;
       $scope.modal.hide();
-      $scope.modal.remove();
-      window.open("/tests/"+$scope.selectedTest+".html","_self")
+      window.open("tests/"+$scope.selectedTest+".html","_blank","location=no");
       $scope.selectedTest = "";
-      
+    }
+    else{
+      $scope.wrongPassword = true;
     }
   };
-         
-});
+})
+.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
+  $ionicConfigProvider.scrolling.jsScrolling(false);
+  $stateProvider
+    .state('/', {
+      url: '/',
+      templateUrl: 'index.html',
+      controller: 'ContentCtrl'
+      })
+  $urlRouterProvider.otherwise('/');
+    });
+
+;
 

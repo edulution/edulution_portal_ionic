@@ -5,13 +5,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-    <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -24,200 +21,202 @@
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
   
   </head>
-  <body ng-controller="ContentCtrl">
+  <body>
+  <ion-view ng-controller="ContentCtrl" id="mainBody">
     <ion-content>
-    <div class="row" id="header">
-      <div class="col col-30">
-        <img src="img/edulution_logo-small.png" >
-      </div>
-      <div class="col col-40">
-        <h1 class="padding-top">Foundational Maths</h1>
-      </div>
-      <div class="col col-30">
-        <a href="#" onclick="window.open('http://1.1.1.1:8008', '_system','location=yes')"><img src="img/kalitelogo.jpg"></a>
-      </div>
-    </div>
-
-    <br>
-
-    <h3>Welcome, please select your course</h3>
-    <ion-list>
-      <ion-item class="course-list" ng-click="toggleTab(1)">
-        <div class="button col col-60 col-offset-20" id="alpha-heading">
-          <h2 class="padding-top">ALPHA</h2>
+      <div class="row" id="header">
+        <div class="col col-30">
+          <img src="img/edulution_logo-small.png" >
         </div>
-      </ion-item>
-      <ion-item class="course-list info" ng-show="isSelected(1)">
-        <div class="course-info col col-60 col-offset-20">
-          <div>
-            <p>Addition, subtraction, multiplication, division, order of operations, negative numbers, factors, multiples, fractions, decimals, percentages.</p>
-            <hr>
-            <div class="row">
-              <div class="col col-25">
-              <a href="playlist/Alpha%20A%20Playlist.htm" class="plylstlink">
-                <img src="img/a-alpha-75.png" alt="">
-                <p>Alpha A</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Alpha%20B%20Playlist.htm" class="plylstlink">
-                <img src="img/b-alpha-75.png" alt="">
-                <p>Alpha B</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Alpha%20C%20Playlist.htm" class="plylstlink">
-                <img src="img/c-alpha-75.png" alt="">
-                <p>Alpha C</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Alpha%20D%20Playlist.htm" class="plylstlink">
-                <img src="img/d-alpha-75.png" alt="">
-                <p>Alpha D</p>
-              </a>
+        <div class="col col-40">
+          <h1 class="padding-top" id="foundationalMaths">Foundational Maths</h1>
+        </div>
+        <div class="col col-30">
+          <a href="#" onclick="window.open('http://1.1.1.1:8008', '_system','location=yes')"><img src="img/kalitelogo.jpg"></a>
+        </div>
+      </div>
+
+      <br>
+
+      <h3>Welcome, please select your course</h3>
+      <ion-list>
+        <ion-item class="course-list" ng-click="toggleTab(1)">
+          <div class="button col col-60 col-offset-20" id="alpha-heading">
+            <h2 class="padding-top">ALPHA</h2>
+          </div>
+        </ion-item>
+        <ion-item class="course-list info" ng-show="isSelected(1)">
+          <div class="course-info col col-60 col-offset-20">
+            <div>
+              <p class="course-content-text">Addition, subtraction, multiplication, division, order of operations, negative numbers, factors, multiples, fractions, decimals, percentages.</p>
+              <hr>
+              <div class="row">
+                <div class="col col-25">
+                <a href="playlist/alphaAv16.htm" class="plylstlink">
+                  <img src="img/a-alpha-75.png" alt="">
+                  <p>Alpha A</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/alphaBv16.htm" class="plylstlink">
+                  <img src="img/b-alpha-75.png" alt="">
+                  <p>Alpha B</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/alphaCv16.htm" class="plylstlink">
+                  <img src="img/c-alpha-75.png" alt="">
+                  <p>Alpha C</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/alphaDv16.htm" class="plylstlink">
+                  <img src="img/d-alpha-75.png" alt="">
+                  <p>Alpha D</p>
+                </a>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col col-33">
+                <a ng-click="chooseTest('alpha1')" class="plylstlink">
+                  <img src="img/alpha-test-1.png" alt="">
+                  <p>Test 1</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('alpha2')" class="plylstlink">
+                  <img src="img/alpha-test-2.png" alt="">
+                  <p>Test 2</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('alpha3')" class="plylstlink">
+                  <img src="img/alpha-test-3.png" alt="">
+                  <p>Test 3</p>
+                </a>
+                </div>            
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col col-33">
-              <a ng-click="chooseTest('alpha1')" class="plylstlink">
-                <img src="img/alpha-test-1.png" alt="">
-                <p>Test 1</p>
-              </a>
-              </div>            
-              <div class="col col-33">
-              <a ng-click="chooseTest('alpha2')" class="plylstlink">
-                <img src="img/alpha-test-2.png" alt="">
-                <p>Test 2</p>
-              </a>
-              </div>            
-              <div class="col col-33">
-              <a ng-click="chooseTest('alpha3')" class="plylstlink">
-                <img src="img/alpha-test-3.png" alt="">
-                <p>Test 3</p>
-              </a>
-              </div>            
-            </div>
           </div>
-        </div>
-      </ion-item>      
-      <ion-item class="course-list" ng-click="toggleTab(2)">
-        <div class="button col col-60 col-offset-20" id="bravo-heading">
-          <h2 class="padding-top">BRAVO</h2>
-        </div>
-      </ion-item>
+        </ion-item>      
+        <ion-item class="course-list" ng-click="toggleTab(2)">
+          <div class="button col col-60 col-offset-20" id="bravo-heading">
+            <h2 class="padding-top">BRAVO</h2>
+          </div>
+        </ion-item>
 
-      <ion-item class="course-list info" ng-show="isSelected(2)">
-        <div class="course-info col col-60 col-offset-20">
-          <div>
-            <p>Negative & absolute numbers, decimals(2), exponents & scientific notation, order of operations(2), ratios, measurements, area & volume, probability & statistics, algebra introduction, linear equations, inequalities, graphing, angles, similarity, congruent triangles.</p>
-            <hr>
-            <div class="row">
-              <div class="col col-25">
-              <a href="playlist/Bravo%20A%20Playlist.htm" class="plylstlink">
-                <img src="img/a-75.png" alt="">
-                <p>Bravo A</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Bravo%20B%20Playlist.htm" class="plylstlink">
-                <img src="img/b-75.png" alt="">
-                <p>Bravo B</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Bravo%20C%20Playlist.htm" class="plylstlink">
-                <img src="img/c-75.png" alt="">
-                <p>Bravo C</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Bravo%20D%20Playlist.htm" class="plylstlink">
-                <img src="img/d-75.png" alt="">
-                <p>Bravo D</p>
-              </a>
+        <ion-item class="course-list info" ng-show="isSelected(2)">
+          <div class="course-info col col-60 col-offset-20">
+            <div>
+              <p class="course-content-text">Negative & absolute numbers, decimals(2), exponents & scientific notation, order of operations(2), ratios, measurements, area & volume, probability & statistics, algebra introduction, linear equations, inequalities, graphing, angles, similarity, congruent triangles.</p>
+              <hr>
+              <div class="row">
+                <div class="col col-25">
+                <a href="playlist/Bravo%20A%20Playlist.htm" class="plylstlink">
+                  <img src="img/a-75.png" alt="">
+                  <p>Bravo A</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Bravo%20B%20Playlist.htm" class="plylstlink">
+                  <img src="img/b-75.png" alt="">
+                  <p>Bravo B</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Bravo%20C%20Playlist.htm" class="plylstlink">
+                  <img src="img/c-75.png" alt="">
+                  <p>Bravo C</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Bravo%20D%20Playlist.htm" class="plylstlink">
+                  <img src="img/d-75.png" alt="">
+                  <p>Bravo D</p>
+                </a>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col col-33">
+                <a ng-click="chooseTest('bravo1')" class="plylstlink">
+                  <img src="img/bravo-test-1.png" alt="">
+                  <p>Test 1</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('bravo2')" class="plylstlink">
+                  
+                  <img src="img/bravo-test-2.png" alt="">
+                  <p>Test 2</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('bravo3')" class="plylstlink">
+                  
+                  <img src="img/bravo-test-3.png" alt="">
+                  <p>Test 3</p>
+                </a>
+                </div>            
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col col-33">
-              <a href="#" onclick="window.open('http://goo.gl/forms/S2wNHKjsph', '_system','location=yes')" class="plylstlink">
-                <img src="img/bravo-test-1.png" alt="">
-                <p>Test 1</p>
-              </a>
-              </div>            
-              <div class="col col-33">
-              <a href="#" onclick="window.open('http://goo.gl/forms/OmBW7r7I88', '_system','location=yes')" class="plylstlink">
-                
-                <img src="img/bravo-test-2.png" alt="">
-                <p>Test 2</p>
-              </a>
-              </div>            
-              <div class="col col-33">
-              <a href="#" onclick="window.open('http://goo.gl/forms/cGMO8cebhS', '_system','location=yes')" class="plylstlink">
-                
-                <img src="img/bravo-test-3.png" alt="">
-                <p>Test 3</p>
-              </a>
-              </div>            
-            </div>
           </div>
-        </div>
-      </ion-item>      
+        </ion-item>      
 
-      <ion-item class="course-list" ng-click="toggleTab(3)">
-        <div class="button col col-60 col-offset-20" id="charlie-heading">
-          <h2 class="padding-top">CHARLIE</h2>
-        </div>
-      </ion-item>
-      <ion-item class="course-list info" ng-show="isSelected(3)">
-        <div class="course-info col col-60 col-offset-20">
-          <div>
-            <p>Probability & statistics, exponents & scientific notation(2), algebra(2), linear equations(2), matrices, trigonometry & pre-calculus, quadratic equations, ratios & proportions(2), circles, functions, graphing(2), vectors & vector spaces, calculus</p>
-            <hr>
-            <div class="row">
-              <div class="col col-25">
-              <a href="playlist/Charlie%20A%20Playlist.htm" class="plylstlink">
-                <img src="img/a-charlie-75.png" alt="">
-                <p>Charlie A</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Charlie%20B%20Playlist.htm" class="plylstlink">
-                <img src="img/b-charlie-75.png" alt="">
-                <p>Charlie B</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Charlie%20C%20Playlist.htm" class="plylstlink">
-                <img src="img/c-charlie-75.png" alt="">
-                <p>Charlie C</p>
-              </a>
-              </div>            
-              <div class="col col-25">
-              <a href="playlist/Charlie%20D%20Playlist.htm" class="plylstlink">
-                <img src="img/d-charlie-75.png" alt="">
-                <p>Charlie D</p>
-              </a>
+        <ion-item class="course-list" ng-click="toggleTab(3)">
+          <div class="button col col-60 col-offset-20" id="charlie-heading">
+            <h2 class="padding-top">CHARLIE</h2>
+          </div>
+        </ion-item>
+        <ion-item class="course-list info" ng-show="isSelected(3)">
+          <div class="course-info col col-60 col-offset-20">
+            <div>
+              <p class="course-content-text">Probability & statistics, exponents & scientific notation(2), algebra(2), linear equations(2), matrices, trigonometry & pre-calculus, quadratic equations, ratios & proportions(2), circles, functions, graphing(2), vectors & vector spaces, calculus</p>
+              <hr>
+              <div class="row">
+                <div class="col col-25">
+                <a href="playlist/Charlie%20A%20Playlist.htm" class="plylstlink">
+                  <img src="img/a-charlie-75.png" alt="">
+                  <p>Charlie A</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Charlie%20B%20Playlist.htm" class="plylstlink">
+                  <img src="img/b-charlie-75.png" alt="">
+                  <p>Charlie B</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Charlie%20C%20Playlist.htm" class="plylstlink">
+                  <img src="img/c-charlie-75.png" alt="">
+                  <p>Charlie C</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/Charlie%20D%20Playlist.htm" class="plylstlink">
+                  <img src="img/d-charlie-75.png" alt="">
+                  <p>Charlie D</p>
+                </a>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col col-33 col-offset-33">
+                <a ng-click="chooseTest('charlie1')" class="plylstlink">
+                  <img src="img/charlie-test-1.png" alt="">
+                  <p>Test 1</p>
+                </a>
+                </div>            
+                </div>            
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col col-33 col-offset-33">
-              <a href="#" onclick="window.open('http://goo.gl/forms/Qn6pl2u2bC', '_system','location=yes')" class="plylstlink">
-                <img src="img/charlie-test-1.png" alt="">
-                <p>Test 1</p>
-              </a>
-              </div>            
-              </div>            
-            </div>
           </div>
-        </div>
-      </ion-item>      
-    </ion-list>
+        </ion-item>      
+      </ion-list>
 
     </ion-content>
+  </ion-view>
 
    
     
