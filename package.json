@@ -2,6 +2,7 @@
   "name": "portalapp",
   "version": "1.1.1",
   "description": "The Edulution portal",
+  "main": "server.js"
   "dependencies": {
     "express": "^4.14.0",
     "gulp": "^3.5.6",
@@ -27,6 +28,6 @@
   ],
   "scripts": {
   "start": "node server.js"
-}
+  }
 }
 
