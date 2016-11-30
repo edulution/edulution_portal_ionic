@@ -9770,6 +9770,11 @@ a.button {
 .plylstlink {
   text-decoration: none; }
 
+#prealpha-heading {
+  background-color: #F4D19C;
+  border: #F4D19C;
+  box-shadow: 2px 2px 2px 2px #3F3F3F; }
+
 #alpha-heading {
   background-color: #CCFFCC;
   border: #CCFFCC;

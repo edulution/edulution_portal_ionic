@@ -23,6 +23,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 /* variables */
 
+$prealpha-color: #F4D19C;
 $alpha-color: #CCFFCC;
 $bravo-color: #C5D9F1;
 $charlie-color: #FDE9D9;
@@ -71,6 +72,11 @@ $gradient-bottom: #60713E;
  	text-decoration: none;
  }
 
+#prealpha-heading{
+	background-color: $prealpha-color;
+	border: $prealpha-color;
+	box-shadow: $button-shadow;
+}
 #alpha-heading{
 	background-color: $alpha-color;
 	border: $alpha-color;
