@@ -1,5 +1,69 @@
 var playlisturl = function (course, playlist, assessment) {
 
+	/*Pre-alpha*/
+	if (course == "Prealpha" && playlist == 'A') {
+		var exercises = ["http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-counting-topic/cc-early-math-numbers-120/numbers-to-120_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-basics/cc-early-math-make-10/making-ten/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-place-value-topic/cc-early-math-tens/groups-of-tens/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-place-value-topic/cc-early-math-tens/tens-and-ones/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-place-value-topic/cc-early-math-two-digit-compare/comparing-two-digit-numbers-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-20/cc-early-math-add-20/adding-three-numbers/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-20/cc-early-math-word-problems-within-20/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-ones-tens/add-within-100--level-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-ones-tens/adding-1s-or-10s-to-two-digit-numbers/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-sub-ones-tens/subtracting-1s-or-10s/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-two-dig-intro/add-within-100--level-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-two-dig-intro/breaking-apart-two-digit-addition-problems_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-two-dig-intro/regroup-two-digit-plus-one-digit/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-sub-two-dig-intro/subtract-within-100-level-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-strategies-for-adding-within-100/making-100/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-strategies-for-adding-within-100/making-100-level-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-strategies-for-adding-within-100/select-strategies-for-adding-within-100/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-strategies-for-adding-within-100/add-sub-within-100-w-num-line/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-subtract-100/addition_3/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/subtraction-within-100/subtraction_3/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-sub-100-word-problems/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-more-fewer-100/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-skip-counting/skip-counting-by-5s/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-skip-counting/skip-counting-by-10s/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-skip-counting/skip-counting-by-100s/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-100/cc-early-math-add-sub-miss-value-prob/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-add-ones-tens-hundreds/add-within-1000--level-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-add-ones-tens-hundreds/add-within-1000--level-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-sub-ones-tens-hundreds/subtract-within-1000--level-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-sub-ones-tens-hundreds/subtract-within-1000--level-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-strategies-for-adding-two-and-three-digit-numbers/break-apart-three-dig-add/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-add-sub-1000/cc-early-math-strategies-for-adding-two-and-three-digit-numbers/making-100-and-1000/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-length-intro/which-has-more-/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-length-intro/order-by-length_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-length-intro/indirect-measurement/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-measuring-length/measuring-lengths-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-measuring-length/measuring-lengths-2_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-compare-estimate-length/estimating-lengths_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-length-word-problems/length-word-problems_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-fractions-of-shapes/length-word-problems/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-picture-graphs/solving-problems-with-picture-graphs-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-picture-graphs/make-picture-graphs-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-bar-graphs/solving-problems-with-bar-graphs-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-bar-graphs/solving-problems-with-bar-graphs-2_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-line-plots/creating-line-plots-1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-measure-data-topic/cc-early-math-time/tell-time-to-hour-or-half-hour/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-shapes/naming-shapes/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-shapes/relative-position/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-shapes/naming-shapes-2/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-shapes/attributes-of-shapes/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-properties-shapes/compare-shapes/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-properties-shapes/recognizing-shapes_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-fractions-of-shapes/recognizing-shapes/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-composing-shapes/compose-shapes_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-fractions-of-shapes/halves-and-fourths_1/",
+						 "http://192.168.8.200:8008/learn/khan/math/early-math/cc-early-math-geometry-topic/cc-early-math-fractions-of-shapes/equal-parts-of-circles-and-rectangles_1/"
+		];
+		window.open(exercises[assessment],'_system','location=yes');
+	}
+	
+
+
 	/*Alpha playlists*/
 
 	if (course == "Alpha" && playlist == 'A') {
@@ -143,7 +207,6 @@ var playlisturl = function (course, playlist, assessment) {
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/add-sub-negatives/ordering-negative-numbers/",
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/add-sub-negatives/ordering_negative_numbers/,",
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/adding-subtracting-negatives/adding-negative-numbers/",
-						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/adding-subtracting-negatives/adding-negative-numbers/",
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/adding-subtracting-negatives/adding_negative_numbers/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/negatives-absolute-value-pre-alg/add-subtract-negatives-pre-alg/adding_and_subtracting_negative_numbers/",
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/absolute-value/mult-div-negatives/multiplying-negative-real-numbers/",
@@ -155,7 +218,7 @@ var playlisturl = function (course, playlist, assessment) {
 						"http://192.168.8.200:8008/learn/khan/math/arithmetic/decimals/decimal-rounding-estimation/rounding_numbers/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/scientific-notation/scientific-notation/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/scientific-notation/scientific-notation-old/",
-						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/scienACCtific-notation/scientific_notation/",
+						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/scientific-notation/scientific_notation/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/radical-radicals/understanding-square-roots/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/radical-radicals/square_roots/",
 						"http://192.168.8.200:8008/learn/khan/math/pre-algebra/exponents-radicals/world-of-exponents/introduction-to-exponents/",
@@ -191,7 +254,7 @@ var playlisturl = function (course, playlist, assessment) {
 						"http://192.168.8.200:8008/learn/khan/math/basic-geo/basic-geo-volume-surface-area/basic-geo-volumes/cylinder-volume-and-surface-area/",
 						"http://192.168.8.200:8008/learn/khan/math/geometry/basic-geometry/volume-tutorial/solid_geometry/",
 						"http://192.168.8.200:8008/learn/khan/math/probability/descriptive-statistics/central-tendency/statistics-intro-mean-median-and-mode/",
-						"http://192.168.8.200:8008/learn/khan/math/probability/descriptive-statistics/centralaa-tendency/mean-median-and-mode/",
+						"http://192.168.8.200:8008/learn/khan/math/probability/descriptive-statistics/central-tendency/mean-median-and-mode/",
 						"http://192.168.8.200:8008/learn/khan/math/probability/descriptive-statistics/central-tendency/mean_median_and_mode/",
 						"http://192.168.8.200:8008/learn/khan/math/algebra/algebra-functions/average-rate-of-change-word-problems/average-rate-of-change-word-problems/"
 		];
