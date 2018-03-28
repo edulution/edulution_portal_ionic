@@ -29,10 +29,12 @@ angular.module('portal', ['ionic'])
   $scope.selectedTest = "";
   $scope.coachPassword ="Ctrib3";
   $scope.wrongPassword = false;
-  $scope.tab = 0;   /* initially set tab to 1*/
-  $scope.toggleTab = function (setTab) { /* Set tab to whatever tab user clicks*/
+  $scope.tab = 0;   /* initially set tab to 0. This does not correspond to any of the course tabs*/
+  $scope.toggleTab = function (setTab) { /* Set tab to the tab user clicks.*/
     if ($scope.tab == setTab){
       $scope.tab=0;
+      /*If the tab already selected is selected again, tab is set to 0*/
+      /*This makes the tab fold again*/
       console.log($scope.tab);
     }
     else{
