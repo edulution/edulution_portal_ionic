@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="passProtect">
 <head>
 	<title>Pre-Alpha</title>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/prealpha.css">
-	<script src="../lib/ionic/js/ionic.bundle.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/password_modal.css">
+	<!-- <script src="../lib/ionic/js/ionic.bundle.js"></script> -->
 	<script src="../cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 	<script src="js/playlists.js"></script>
+
+	<script src="pmodule/angular.js"></script>
+	<script src="pmodule/angular-animate.js"></script>
+	<script src="pmodule/angular-sanitize.js"></script>
+	<script src="pmodule/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="pmodule/app.js"></script>
 </head>
 <body>
+	<script type="text/ng-template" id="testModalContent.html">
+	    <div class="modal-header">
+	        <h3 class="modal-title" id="modal-title">The Coach should enter the password</h3>
+	    </div>
+	    <div class="modal-body" id="modal-body">
+	      <label class="item item-input">
+	        <input ng-model="password" type="password" class="form-control" id="passwordInput" required>
+	      </label>
+	      <p class="password-error" ng-show="wrongPassword==true">Sorry, that is not the correct password. Please try again</p>
+	    </div>
+	    <div class="modal-footer">
+	        <button class="btn btn-success" type="button" ng-click="$ctrl.checkPassword(password)">OK</button>
+	        <button class="btn btn-danger" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+	    </div>
+	</script>
 	<!-- Playlist title and edulution logo -->
 	<div class="row titlerow">
-		<div class="col-md-3">
+		<div class="col-md-3" id="elogo-container">
 			<a href="../index.html"><img src="elogo.png" class="elogo"></a>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" id="playlist-name-container">
 			<h2 class="playlist_title">Pre-Alpha Playlist</h2>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3" id="kalogo-container">
 			<a href="#" onclick="window.open('http://192.168.8.200:8008', '_system','location=yes')"><img src="kalitelogo.jpg" class="elogo"></a>
 		</div>		
 	</div>
@@ -493,6 +515,47 @@
 								<h4 class="assesment_name">Equal parts of circles and rectangles</h4>
 							</td>
 						</tr>											
+					</table>				
+						
+				
+				</div>
+			</div>				
+
+
+			<div class="row panel modal-demo" ng-controller="ModalDemoCtrl as $ctrl">
+				<div data-toggle="collapse" data-target="#aplhaA8" data-parent="#menu">
+					<h3 class="topic"><img src="prealphaimgs/geometry.png">   Assessments</h3>	
+				</div>
+				<div class="col-md-6 col-md-offset-3 panel-collapse collapse" id="aplhaA8">
+					<table class="table">					
+						
+						<tr ng-click="$ctrl.open('test1')">
+							<td>
+								<i class="fa fa-pencil fa-2x exercise_icon" aria-hidden="true"></i>
+							</td>
+							<td>
+								<h4 class="assesment_name">test 1</h4>
+							</td>
+						</tr>						
+
+						<tr ng-click="$ctrl.open('test1')">
+							<td>
+								<i class="fa fa-pencil fa-2x exercise_icon" aria-hidden="true"></i>
+							</td>
+							<td>
+								<h4 class="assesment_name">test 1</h4>
+							</td>
+						</tr>						
+
+						<tr ng-click="$ctrl.open('test1')">
+							<td>
+								<i class="fa fa-pencil fa-2x exercise_icon" aria-hidden="true"></i>
+							</td>
+							<td>
+								<h4 class="assesment_name">test 1</h4>
+							</td>
+						</tr>						
+																	
 					</table>				
 						
 				
