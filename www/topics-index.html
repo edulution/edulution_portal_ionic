@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="topicsIndex">
+
+<head>
+  <title>Index of Topics</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/topic-index.css" rel="stylesheet">
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/smart-table.min.js"></script>
+  <script type="text/javascript" src="js/topic-index.js"></script>
+</head>
+
+<body>
+<div class="col-md-8 col-md-offset-2" ng-controller="mainCtrl">
+  <h2>Index of Topics</h2>
+  <table st-table="topicCollection" class="table">
+  	<tr>
+        <th colspan="1">
+        	<input st-search type="search" placeholder="Search" class="form-control">
+        </th>
+  	</tr>
+  
+    <tr>
+      <th>
+        <h3><b>Topic</b></h3></th>
+      <th>
+        <h3><b>Location</b></h3></th>
+    </tr>
+    <tr ng-repeat="row in topicCollection">
+    	<td><h4>{{row.topic}}</h4></td>
+    	<td><h4>{{row.location}}</h4></td>
+    </tr>
+    
+  </table>
+</div>
+
+  
+</body>
+
+</html>

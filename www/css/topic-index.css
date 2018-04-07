@@ -1,0 +1,33 @@
+#index-of-topics-btn{
+	float: left;
+	margin-left: 10%;
+	padding: 1%;
+	background-color: #159B15;
+	box-shadow: 2px 2px 2px 2px #3F3F3F;
+	border: #159B15;
+	border-radius: 5px;
+
+}
+#index-of-topics-btn a{
+	text-decoration: none;
+}
+#index-of-topics-btn a h2{
+	margin-bottom: 0;
+}
+
+#literacy-assessments-btn{
+	float: right;
+	margin-right: 6%;
+	padding: 1%;
+	background-color: #159B15;
+	box-shadow: 2px 2px 2px 2px #3F3F3F;
+	border: #159B15;
+	border-radius: 5px;
+}
+
+#literacy-assessments-btn a{
+	text-decoration: none;
+}
+#literacy-assessments-btn a h2{
+	margin-bottom: 0;
+}
