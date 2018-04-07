@@ -9,6 +9,7 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/topic-index.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -39,21 +40,80 @@
       <br>
 
       <h3>Welcome, please select your course</h3>
-      <ion-list>
-        <ion-item class="course-list">
-        <a href="playlist/prealpha.html" class="plylstlink">
+      <ion-list> <!-- List which holds all course tabs -->
+
+<!-- Begin pre-alpha -->
+        <ion-item class="course-list" ng-click="toggleTab(1)">
+        <!-- <a href="playlist/prealpha.html" class="plylstlink"> -->
           <div class="button col col-60 col-offset-20" id="prealpha-heading">
             <h2 class="padding-top">PRE-ALPHA</h2>
           </div>
         </a>
         </ion-item>
+        <ion-item class="course-list info" ng-show="isSelected(1)">
+          <div class="course-info col col-60 col-offset-20">
+            <div>
+              <p class="course-content-text">Counting, Addition, Subtraction, Multiplication, Division, Geometry</p>
+              <hr>
+              <div class="row">
+                <div class="col col-25">
+                <a href="playlist/prealphaa.html" class="plylstlink">
+                  <img src="img/pre-75.png" alt="">
+                  <p>Pre-Alpha A</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/prealphab.html" class="plylstlink">
+                  <img src="img/preb-75.png" alt="">
+                  <p>Pre-Alpha B</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/prealphac.html" class="plylstlink">
+                  <img src="img/prec-75.png" alt="">
+                  <p>Pre-Alpha C</p>
+                </a>
+                </div>            
+                <div class="col col-25">
+                <a href="playlist/prealphad.html" class="plylstlink">
+                  <img src="img/pred-75.png" alt="">
+                  <p>Pre-Alpha D</p>
+                </a>
+                </div>
+              </div>
+              <!-- <hr> -->
+<!--               <div class="row">
+                <div class="col col-33">
+                <a ng-click="chooseTest('prealp_1')" class="plylstlink">
+                  <img src="img/pre-test-1.png" alt="">
+                  <p>Test 1</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('prealp_2')" class="plylstlink">
+                  <img src="img/pre-test-2.png" alt="">
+                  <p>Test 2</p>
+                </a>
+                </div>            
+                <div class="col col-33">
+                <a ng-click="chooseTest('prealp_3')" class="plylstlink">
+                  <img src="img/pre-test-3.png" alt="">
+                  <p>Test 3</p>
+                </a>
+                </div>            
+              </div> -->
+            </div>
+          </div>
+        </ion-item> 
+<!-- End Pre-alpha -->
 
-          <ion-item class="course-list" ng-click="toggleTab(1)">
+<!-- Begin Alpha -->
+        <ion-item class="course-list" ng-click="toggleTab(2)">
           <div class="button col col-60 col-offset-20" id="alpha-heading">
             <h2 class="padding-top">ALPHA</h2>
           </div>
         </ion-item>
-        <ion-item class="course-list info" ng-show="isSelected(1)">
+        <ion-item class="course-list info" ng-show="isSelected(2)">
           <div class="course-info col col-60 col-offset-20">
             <div>
               <p class="course-content-text">Addition, subtraction, multiplication, division, order of operations, negative numbers, factors, multiples, fractions, decimals, percentages.</p>
@@ -107,14 +167,17 @@
               </div>
             </div>
           </div>
-        </ion-item>      
-        <ion-item class="course-list" ng-click="toggleTab(2)">
+        </ion-item>
+<!-- End Alpha -->
+
+<!-- Begin Bravo -->      
+        <ion-item class="course-list" ng-click="toggleTab(3)">
           <div class="button col col-60 col-offset-20" id="bravo-heading">
             <h2 class="padding-top">BRAVO</h2>
           </div>
         </ion-item>
 
-        <ion-item class="course-list info" ng-show="isSelected(2)">
+        <ion-item class="course-list info" ng-show="isSelected(3)">
           <div class="course-info col col-60 col-offset-20">
             <div>
               <p class="course-content-text">Negative & absolute numbers, decimals(2), exponents & scientific notation, order of operations(2), ratios, measurements, area & volume, probability & statistics, algebra introduction, linear equations, inequalities, graphing, angles, similarity, congruent triangles.</p>
@@ -170,14 +233,17 @@
               </div>
             </div>
           </div>
-        </ion-item>      
+        </ion-item> 
+<!-- End Bravo -->
 
-        <ion-item class="course-list" ng-click="toggleTab(3)">
+
+<!-- Begin Charlie -->
+        <ion-item class="course-list" ng-click="toggleTab(4)"> 
           <div class="button col col-60 col-offset-20" id="charlie-heading">
             <h2 class="padding-top">CHARLIE</h2>
           </div>
         </ion-item>
-        <ion-item class="course-list info" ng-show="isSelected(3)">
+        <ion-item class="course-list info" ng-show="isSelected(4)">
           <div class="course-info col col-60 col-offset-20">
             <div>
               <p class="course-content-text">Probability & statistics, exponents & scientific notation(2), algebra(2), linear equations(2), matrices, trigonometry & pre-calculus, quadratic equations, ratios & proportions(2), circles, functions, graphing(2), vectors & vector spaces, calculus</p>
@@ -221,10 +287,26 @@
             </div>
           </div>
         </ion-item>      
-      </ion-list>
+      </ion-list> 
+<!-- End Charlie -->
+
+
       <div class="version_number">
         <h4>Version 2.2(12/16)</h4>
       </div>
+  <div id="extra_btns">
+    <div id="index-of-topics-btn" class="col-md-4">
+      <a href="topics-index.html">
+        <h2>Index of Topics</h2>
+      </a>
+    </div>
+    <div id="literacy-assessments-btn" class="col-md-4">
+      <a href="literacy-assessments.html">
+        <h2>Literacy Assessments</h2>
+      </a>
+    </div>
+    
+  </div>
     </ion-content>
   </ion-view>
 
