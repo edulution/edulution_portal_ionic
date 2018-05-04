@@ -2,11 +2,15 @@
 Created using Ionicframework
 
 ## To run on your local machine ##
-* make sure ionic-cli is installed on your computer
+* make sure Android SDK is installed on your computer
+* sudo npm install -g cordova@6.4.0
+* sudo npm install -g ionic@2.1.4
 * clone repository to your local machine
 * navigate to the root directory of the repository using your terminal
-* run the command to serve on your local machine:
-        ionic serve
+* sudo npm install
+* sudo npm rebuild node-sass
+* to serve on your the application:
+        sudo ionic serve
 
 * to build:
         cordova build android --release
