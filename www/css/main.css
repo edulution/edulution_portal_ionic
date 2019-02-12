@@ -1,0 +1,46 @@
+/* Navbar background-color */
+
+#Navbackground {
+    background-color: #fff;
+}
+
+.clear {
+    padding-top:10px;
+}
+
+
+/* PRE ALPHA HEADING */
+#prealpha-heading {
+    background-color: #F4D19C;
+    border: #F4D19C;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+
+/* ALPHA HEADING */
+#alpha-heading {
+    background-color: #CCFFCC;
+    border: #CCFFCC;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+/* BRAVO */
+#bravo-heading {
+    background-color: #C5D9F1;
+    border: #C5D9F1;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+
+/* CHARLIE */
+#charlie{
+    background-color:#FDE9D9;
+    border:#FDE9D9;
+    box-shadow:2px 2px 2px 2px #3F3F3F
+}
+
+
+#paddings {
+    /* padding-top:50%; */
+    padding-right:20%
+}
