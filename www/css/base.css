@@ -1,0 +1,129 @@
+/* Body  */
+
+body{
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+
+}
+
+
+
+/* Navbar background-color */
+
+.Navbackground {
+    background-color: #fff;
+    
+}
+
+
+
+/* Headers  */
+.h2color{
+    color: #fff;
+}
+
+.mainBody {
+    text-align:center;
+}
+
+.clear {
+    padding-top:10px;
+}
+
+.clearfooter {
+    padding-top: 60px;
+}
+
+
+/* Curved Accordion */
+.panel-heading {
+     border-top-radius:5px;
+     border-bottom-radius:5px;
+  
+}
+
+/* PRE ALPHA HEADING */
+#prealpha-heading {
+    background-color: #F4D19C;
+    border: #F4D19C;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+
+/* ALPHA HEADING */
+#alpha-heading {
+    background-color: #CCFFCC;
+    border: #CCFFCC;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+/* BRAVO */
+#bravo-heading {
+    background-color: #C5D9F1;
+    border: #C5D9F1;
+    box-shadow: 2px 2px 2px 2px #3F3F3F;
+}
+
+
+/* CHARLIE */
+#charlie{
+    background-color:#FDE9D9;
+    border:#FDE9D9;
+    box-shadow:2px 2px 2px 2px #3F3F3F
+}
+
+
+
+
+
+
+/* Added Green Buttons */
+.btn-button {
+    background-color: #3D8D54;
+}
+
+
+/* PRE-ALPHA */
+.myBackgroundPreAlpa {
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+}
+/* ALPHA CSS  */
+
+.myBackgroundAlpha {
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+}
+
+/* BRAVO */
+
+.myBackgroundBravo {
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+}
+
+/* CHARLIE */
+.myBackgroundCharlie {
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+}

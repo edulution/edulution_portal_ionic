@@ -1,111 +1,85 @@
-// Ionic Starter App
+/*Angular module to display password modal and make sure correct password is entered*/
+angular.module('passProtect', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+angular.module('passProtect').controller('ModalDemoCtrl', function ($scope,$uibModal, $log, $document) {
+  var $ctrl = this;
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('portal', ['ionic'])
+  $ctrl.animationsEnabled = true;
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+  $ctrl.openModal = function (parentSelector) {
+    var parentElem = parentSelector ? 
+      angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+    var modalInstance = $uibModal.open({
+      animation: $ctrl.animationsEnabled,
+      ariaLabelledBy: 'modal-title',
+      ariaDescribedBy: 'modal-body',
+      templateUrl: 'testModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      controllerAs: '$ctrl',
+      backdrop: 'static',
+      keyboard: false,
+      appendTo: parentElem
+    });
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-    ionic.Platform.isFullScreen = true;
-  });
-})
+    console.log("modal loaded");
+  };
+});
 
-/*Main controller*/
-.controller('ContentCtrl',function($scope, $state, $ionicModal){
-  $scope.selectedTest = "";
+angular.module('passProtect').controller('ModalInstanceCtrl', function ($scope,$uibModalInstance) {
   $scope.coachPassword ="Ctrib3";
   $scope.wrongPassword = false;
-  $scope.tab = 0;   /* initially set tab to 0. This does not correspond to any of the course tabs*/
-  $scope.toggleTab = function (setTab) { /* Set tab to the tab user clicks.*/
-    if ($scope.tab == setTab){
-      $scope.tab=0;
-      /*If the tab already selected is selected again, tab is set to 0*/
-      /*This makes the tab fold again*/
-      console.log($scope.tab);
-    }
-    else{
-      $scope.tab = setTab;
-      console.log($scope.tab);
-    }
-  };
-  $scope.isSelected = function (checkTab) {/* Check which tab is selected to trigger show of selected tab */
-    return $scope.tab === checkTab;
-  };
 
-  /*Modal when test is selected*/
-  $ionicModal.fromTemplateUrl('templates/modal.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
- 
-  // Cleanup the modal when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.modal.remove();
-  });
-  // Execute action on hide modal
-  $scope.$on('modal.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove modal
-  $scope.$on('modal.removed', function() {
-    // Execute action
-  });
-  $scope.chooseTest = function (test) {
-    $scope.selectedTest = test;
-    $scope.modal.show();
-  }  
-})
+  var $ctrl = this;
 
 
-/*Form controller*/
-.controller('formCtrl',function($scope) {
-    $scope.openModal = function() {
-    $scope.modal.show();
-  };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-    $scope.wrongPassword = false;
-    $scope.password = "";
+  $ctrl.cancel = function () {
+    $uibModalInstance.dismiss();
   };
 
-  $scope.checkPassword = function (password) {
+  $ctrl.checkPassword = function (password) {
     if (password == $scope.coachPassword) {
       $scope.wrongPassword = false;
-      $scope.modal.hide();
-      window.open("tests/"+$scope.selectedTest+".html","_blank","location=no");
-      $scope.selectedTest = "";
+      $uibModalInstance.dismiss();
     }
     else{
       $scope.wrongPassword = true;
     }
   };
-})
-.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
-  $ionicConfigProvider.scrolling.jsScrolling(false);
-  $stateProvider
-    .state('/', {
-      url: '/',
-      templateUrl: 'index.html',
-      controller: 'ContentCtrl'
-      })
-  $urlRouterProvider.otherwise('/');
-    });
+});
 
-;
+/*directive to invalidate the form based on student_id inputted*/
+angular.module('passProtect').directive('whitelist', function ($http,$rootScope){ 
+   return {
+      require: 'ngModel',
+      scope:true,
+      link: function(scope, elem, attr, ngModel) {
+        /*global variables to store list of users objects and usernames*/
+        var usernames = [];
+        var users = [];
 
+        /*Send get request to endpoint to return all user objects*/
+        $http.get( "/get_users").then(function( response) {
+          users = response.data; 
+          /*console.log(users);*/
+          /*Loop through objects in list and add to usernames list*/
+          for (var i=0, item; item = users[i]; i++) {
+            usernames.push(item["username"].toString());
+          }
+          /*console.log(usernames);*/
+        });
+          var whitelist = usernames;
+
+          //For DOM -> model validation
+          ngModel.$parsers.unshift(function(value) {
+             var valid = whitelist.indexOf(value) > -1;
+             ngModel.$setValidity('whitelist', valid);
+             return valid ? value : undefined;
+          });
+
+          //For model -> DOM validation
+          ngModel.$formatters.unshift(function(value) {
+             ngModel.$setValidity('whitelist', whitelist.indexOf(value) > -1);
+             return value;
+          });
+      }
+   };
+});

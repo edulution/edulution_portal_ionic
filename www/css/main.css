@@ -1,10 +1,7 @@
 /* Body  */
 
 body{
-    background:-webkit-linear-gradient(#D3E8BF,#60713E);
-    background:-o-linear-gradient(#D3E8BF,#60713E);
-    background:-moz-linear-gradient(#D3E8BF,#60713E);
-    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    
     text-align:center;
     font-family:"Arial,Helvetica,sans-serif";
 
@@ -12,23 +9,86 @@ body{
 
 /* Navbar background-color */
 
-#Navbackground {
+.Navbackground {
     background-color: #fff;
+    
 }
 
-.clear {
-    padding-top:10px;
-}
-
-/* #mainBody{
+/* Main index background */
+.mainBackground {
     background:-webkit-linear-gradient(#D3E8BF,#60713E);
     background:-o-linear-gradient(#D3E8BF,#60713E);
     background:-moz-linear-gradient(#D3E8BF,#60713E);
     background:linear-gradient(#D3E8BF,#60713E) fixed;
-    text-align:center;
-    font-family:"Arial,Helvetica,sans-serif";
-} */
+}
 
+/* Background Pre Alpha  */
+.prealpha {
+    background-color:#F4D19C;
+    /* background:-webkit-linear-gradient(#D3E8BF,#F4D19C);
+    background:-o-linear-gradient(#D3E8BF,#F4D19C);
+    background:-moz-linear-gradient(#D3E8BF,#F4D19C);
+    background:linear-gradient(#D3E8BF,#F4D19C) fixed; */
+}
+
+/* Background Alpha */
+.alpha {
+    background-color: #CCFFCC;
+    /* background:-webkit-linear-gradient(#D3E8BF,#CCFFCC);
+    background:-o-linear-gradient(#D3E8BF,#CCFFCC);
+    background:-moz-linear-gradient(#D3E8BF,#CCFFCC);
+    background:linear-gradient(#D3E8BF,#CCFFCC) fixed; */
+}
+
+
+/* Background Bravo */
+.bravo {
+    background-color:#f5f5f5;
+    /* background:-webkit-linear-gradient(#f5f5f5);
+    background:-o-linear-gradient(#f5f5f5);
+    background:-moz-linear-gradient(#f5f5f5);
+    background:linear-gradient(#f5f5f5) fixed; */
+}
+
+/* Background Charlie */
+.charlie {
+    background-color:#FDE9D9;
+    /* background:-webkit-linear-gradient(#D3E8BF,#FDE9D9);
+    background:-o-linear-gradient(#D3E8BF,#FDE9D9);
+    background:-moz-linear-gradient(#D3E8BF,#FDE9D9);
+    background:linear-gradient(#D3E8BF,#FDE9D9) fixed; */
+}
+
+
+
+
+
+/* Headers  */
+.h2color{
+    color: #fff;
+}
+
+.mainBody {
+    text-align:center;
+}
+
+/* Clear */
+.clear {
+    padding-top:10px;
+}
+
+/* Clear */
+.clearfooter {
+    padding-top: 60px;
+}
+
+
+/* Curved Accordion */
+.panel-heading {
+     border-top-radius:5px;
+     border-bottom-radius:5px;
+  
+}
 
 /* PRE ALPHA HEADING */
 #prealpha-heading {
@@ -52,7 +112,6 @@ body{
     box-shadow: 2px 2px 2px 2px #3F3F3F;
 }
 
-
 /* CHARLIE */
 #charlie{
     background-color:#FDE9D9;
@@ -61,7 +120,7 @@ body{
 }
 
 
-#paddings {
-    /* padding-top:50%; */
-    padding-right:20%
+/* Added Green Buttons */
+.btn-button {
+    background-color: #3D8D54;
 }
