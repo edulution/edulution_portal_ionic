@@ -1,3 +1,15 @@
+/* Body  */
+
+body{
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+
+}
+
 /* Navbar background-color */
 
 #Navbackground {
@@ -7,6 +19,15 @@
 .clear {
     padding-top:10px;
 }
+
+/* #mainBody{
+    background:-webkit-linear-gradient(#D3E8BF,#60713E);
+    background:-o-linear-gradient(#D3E8BF,#60713E);
+    background:-moz-linear-gradient(#D3E8BF,#60713E);
+    background:linear-gradient(#D3E8BF,#60713E) fixed;
+    text-align:center;
+    font-family:"Arial,Helvetica,sans-serif";
+} */
 
 
 /* PRE ALPHA HEADING */
