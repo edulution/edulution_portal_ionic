@@ -36,7 +36,7 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="alpha" ng-app="" >
+  <body class="alpha" ng-app="myApp" ng-controller="myCtrl">
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
@@ -49,4 +49,10 @@
 
      
   </body>
+  <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstname = "Alpha";  
+        });
+        </script>
 </html>

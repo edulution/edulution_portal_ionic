@@ -36,10 +36,12 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="mainBackground" ng-app="" >
+  <body class="mainBackground" ng-app="myApp" ng-controller="myCtrl">
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
+
+      <h3 class="mainBody">Welcome, please select your course</h3>
 
       <!-- Body -->
       <div ng-include="'include/body.html'"></div>
@@ -74,4 +76,10 @@
     </div>
  
   </body>
+  <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+          $scope.firstname = "Foundational Math";  
+      });
+      </script>
 </html>

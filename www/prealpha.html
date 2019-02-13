@@ -36,12 +36,13 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="prealpha" ng-app="myApp"  ng-controller="myCtrl">
+  <body class="prealpha" ng-app="myApp" ng-controller="myCtrl">
+
+      
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
-
-      <p ng-bind="firstname"></p>
+      
       <!-- Body -->
       <div ng-include="'include/body.html'"></div>
 
@@ -55,8 +56,7 @@
   <script>
       var app = angular.module('myApp', []);
       app.controller('myCtrl', function($scope) {
-          $scope.firstname = "John";
-          $scope.lastname = "Doe";    
+          $scope.firstname = "Pre Alpha";  
       });
       </script>
 </html>
