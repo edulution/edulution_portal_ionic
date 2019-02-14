@@ -36,7 +36,7 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="prealpha" ng-app="myApp" ng-controller="myCtrl">
+  <body class="prealpha" ng-app="WebApp" ng-controller="myTitle">
 
       
 
@@ -52,16 +52,15 @@
         <div ng-include="'include/prealphas.html'">
         </div>
 
-      <!-- Footer -->
-      <div ng-include="'include/footer.html'"></div>
+      
 
       
 
  
   </body>
   <script>
-      var app = angular.module('myApp', []);
-      app.controller('myCtrl', function($scope) {
+      var app = angular.module('WebApp', []);
+      app.controller('myTitle', function($scope) {
           $scope.firstname = "Pre Alpha Playlist";  
       });
       </script>

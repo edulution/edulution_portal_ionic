@@ -9,7 +9,8 @@
 
     <!-- Todo Add native css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     
     
     <!-- compiled css output -->
@@ -36,24 +37,23 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="bravo" ng-app="myApp" ng-controller="myCtrl">
+  <body class="bravo" ng-app="WebApp" ng-controller="myTitle">
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
 
       <!-- Body -->
-      <div ng-include="'include/body.html'"></div>
-
-      <!-- Footer -->
-      <div ng-include="'include/footer.html'"></div>
+      <!-- <div ng-include="'include/body.html'"></div> -->
+       <div ng-include="'include/bravos.html'"></div>
+    
 
       
  
   </body>
   <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope) {
-            $scope.firstname = "Bravo";  
+        var app = angular.module('WebApp', []);
+        app.controller('myTitle', function($scope) {
+            $scope.firstname = "Bravo Playlist";  
         });
         </script>
 </html>

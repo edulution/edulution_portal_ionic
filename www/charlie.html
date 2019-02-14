@@ -36,13 +36,14 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="charlie" ng-app="myApp" ng-controller="myCtrl">
+  <body class="charlie" ng-app="WebApp" ng-controller="myTitle">
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
 
       <!-- Body -->
-      <div ng-include="'include/body.html'"></div>
+      <!-- <div ng-include="'include/body.html'"></div> -->
+      <div ng-include="'include/charlies.html'"></div>
 
       <!-- Footer -->
       <div ng-include="'include/footer.html'"></div>
@@ -50,9 +51,9 @@
      
   </body>
   <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope) {
-            $scope.firstname = "Charlie";  
+        var app = angular.module('WebApp', []);
+        app.controller('myTitle', function($scope) {
+            $scope.firstname = "Charlie Playlist";  
         });
         </script>
 </html>
