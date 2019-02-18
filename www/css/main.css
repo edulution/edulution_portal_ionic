@@ -60,7 +60,10 @@ body{
 }
 
 
-
+/* Image Align */
+img {
+    align:left;
+}
 
 
 /* Headers  */
@@ -123,4 +126,8 @@ body{
 /* Added Green Buttons */
 .btn-button {
     background-color: #3D8D54;
+}
+
+img .images {
+    text-align: right;
 }
