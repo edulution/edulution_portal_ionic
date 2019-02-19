@@ -4,8 +4,8 @@ app.config(function($routeProvider) {
   .when("/", {
     templateUrl : "main.htm"
   })
-  .when("/red", {
-    templateUrl : "red.htm"
+  .when("/AlphaCPlaylist", {
+    templateUrl : "../../alphab.html"
   })
   .when("/green", {
     templateUrl : "green.htm"

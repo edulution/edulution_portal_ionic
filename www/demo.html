@@ -36,25 +36,32 @@
     <!-- Added native js  -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
-  <body class="alpha" ng-app="WebApp" ng-controller="myTitle">
+  <body class="prealpha" ng-app="WebApp" ng-controller="myTitle">
+
+      
 
       <!-- Navbar -->
       <div ng-include="'include/navbar.html'"></div>
-
+      
       <!-- Body -->
-      <!-- <div ng-include="'include/body.html'"></div> -->
-      <div ng-include="'include/alpha/alphab.html'">
-      </div>
+   
+      
+        <!-- Pre Alpha -->
+        <!-- <div ng-include="'include/body.html'"> -->
+        <!-- </div> -->
+        <div ng-include="'include/prealpha/prealphabs.html'">
+        </div>
 
-     
+      
 
-     
+      
+
+ 
   </body>
-  <script src="js/main.js"></script>
-  <!-- <script>
-        var app = angular.module('WebApp', []);
-        app.controller('myTitle', function($scope) {
-            $scope.firstname = "Alpha B Playlist";  
-        });
-        </script> -->
+  <script>
+      var app = angular.module('WebApp', []);
+      app.controller('myTitle', function($scope) {
+          $scope.firstname = "Pre Alpha B Playlist";  
+      });
+      </script>
 </html>
